@@ -1,0 +1,92 @@
+[
+    {
+        "model": "ecommerce_app.Products", 
+        "pk": 1, 
+        "fields": {
+            "name": "Palette", 
+            "category": "Beauty", 
+            "cost": 30,
+            "img": "http://cdn.shopify.com/s/files/1/1406/2336/products/BC-Ecomm-Styled-Irresitable-Palette-10_1024x1024.jpg?v=1642098078"
+        }
+    }, 
+    {
+        "model": "ecommerce_app.Products", 
+        "pk": 2, 
+        "fields": {
+            "name": "Lip balm", 
+            "category": "Beauty", 
+            "cost": 22,
+            "img": "https://www.instyle.com/thmb/0klO_Xj4ZMVXsCyIL0wfZlodb5g=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ins-primary-best-lip-balms-jjuliao-10122022-11221-549be76648dd4cf1ad1822b6ba153cb2.jpg"
+        }
+    }, 
+    {
+        "model": "ecommerce_app.Products", 
+        "pk": 3, 
+        "fields": {
+            "name": "Hand balm", 
+            "category": "Beauty", 
+            "cost": 25, 
+            "img": "https://www.countryhillcottage.com/wp-content/uploads/2019/06/Country_Hill_Cottage_DIY_Hand_Cream_Recipe_with_Essential_Oils-07.jpg"
+        }
+    }, 
+    {
+        "model": "ecommerce_app.Products", 
+        "pk": 4, 
+        "fields": {
+            "name": "Coffee machine", 
+            "category": "Kitchen", 
+            "cost": 220,
+            "img": "https://assets.bonappetit.com/photos/61e755ce6b6fe523b0365397/16:9/w_1920,h_1080,c_limit/20220112%20Best%20Coffee%20Maker%20LEDE.jpg"
+        }
+    },
+    {
+        "model": "ecommerce_app.Products", 
+        "pk": 5, 
+        "fields": {
+            "name": "Toaster", 
+            "category": "Kitchen", 
+            "cost": 170,
+            "img": "https://www.berings.com/wp-content/uploads/2022/07/Champagne-Toaster-6.jpg" 
+        }
+    },
+    {
+        "model": "ecommerce_app.Products", 
+        "pk": 6, 
+        "fields": {
+            "name": "Dinnerware", 
+            "category": "Kitchen", 
+            "cost": 85,
+            "img": "https://images.costco-static.com/ImageDelivery/imageService?profileId=12026540&itemId=100761217-847&recipeName=680"
+        }
+    },
+    {
+        "model": "ecommerce_app.Products", 
+        "pk": 7, 
+        "fields": {
+            "name": "Mirror", 
+            "category": "Home", 
+            "cost": 225,
+            "img": "https://secure.img1-fg.wfcdn.com/im/17359704/c_crop_resize_zoom-h624-w900%5Ecompr-r85/1391/139101563/default_name.jpg"
+        }
+    },
+    {
+        "model": "ecommerce_app.Products", 
+        "pk": 8, 
+        "fields": {
+            "name": "TV set", 
+            "category": "Home", 
+            "cost": 405,
+            "img": "https://www.thespruce.com/thmb/bdUgKy6cenWSxFy3EQ87nHJtLss=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/where-to-put-your-television-1976760-hero-307b3a5acab344f3aaf40fe711874f53.jpg"
+        }
+    },
+    {
+        "model": "ecommerce_app.Products", 
+        "pk": 9, 
+        "fields": {
+            "name": "Sofa", 
+            "category": "Home", 
+            "cost": 750,
+            "img": "https://www.longislanddiscountfurniture.com/uploads/imagegallery/images/Landing_Banner_1.jpg"
+        }
+    }
+]
