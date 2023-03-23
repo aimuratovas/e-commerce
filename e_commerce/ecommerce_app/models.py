@@ -8,7 +8,7 @@ class Products(models.Model):
     img = models.ImageField(null=True, max_length=500)
 
     def __str__(self) -> str:
-        return f"{self.name} {self.category}"
+        return f"{self.name} {self.category} {self.cost} {self.img}"
 
 
 class Shopping_cart(models.Model):

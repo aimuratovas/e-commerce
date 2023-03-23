@@ -1,0 +1,17 @@
+{% extends 'pages/index.html' %}
+
+{% block content %}
+<h2> Product info </h2>
+<div class="card-group">
+    <div class="card">
+        <img src="{{product_img}}" height = "400px" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Product Name: {{product_name}}</h5>
+            <p class="price">Product Cost: {{product_cost}}</p>
+        </div>
+        <div class="card-body">
+            <a href="#" class="card-link">Add to cart</a> {% comment "TODO" %}{% endcomment %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

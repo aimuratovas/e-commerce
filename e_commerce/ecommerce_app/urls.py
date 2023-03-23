@@ -3,9 +3,10 @@ from . import views
 
 urlpatterns = [
     path('', views.home), 
-    path('category/<int:id>', views.products_by_category),
-    path('product/<int:id>', views.product_info),
+    path('category/', views.all_categories),
+    path('category/<str:category>', views.products_by_category),
+    path('product/<str:name>', views.product_info),
     path('shopping-cart/', views.shopping_cart),
-    path('search/<str:search>', views.search_by_name), #TODO
+    path('search/<str:name>', views.search_by_name),
 ]
 
