@@ -1,0 +1,16 @@
+{% extends 'pages/index.html' %}
+
+{% block content %}
+    <h2> Shopping cart </h2>
+
+{% for shopping in  shoppings %}
+    
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <p class="price">{{shopping.product.name}}: {{shopping.quantity}} - ${{shopping.product.cost}}</p>        
+        </div>
+    </div>
+
+{% endfor %}
+<p class="total_price">TOTAL PRICE: {{total}}</p>
+{% endblock content %}

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+import json
 
 # Create your views here.
 def home(request):
@@ -29,11 +30,8 @@ def products_by_category(request, category):
 
 def product_info(request, name):
     product = Products.objects.all().filter(name = name)
-    print(product[0].name)
     data = {
-        'product_name' : product[0].name,
-        'product_cost' : product[0].cost,
-        'product_img' : product[0].img
+        'product' : product[0]
     }
     return render(request, 'pages/product.html', data)
     
@@ -52,7 +50,25 @@ def search_by_name(request, name):
 
 def shopping_cart(request):
     shoppings = Shopping_cart.objects.all()
+    total = 0
+    for shopping in shoppings:
+        print(shopping)
+        print(shopping.product)
+        total += shopping.product.cost * shopping.quantity
     data = {
         'shoppings' : shoppings,
+        'total' : total
     }
     return render(request, 'pages/shopping_cart.html', data)
+
+def add_shopping_cart(request, id):
+    cart, created = Shopping_cart.objects.get_or_create(product_id=id)
+
+    if not created:
+        existing_quantity = cart.quantity
+        cart.quantity = existing_quantity + 1
+        cart.save()
+
+    product = cart.product
+
+    return render(request, 'pages/add_shopping_cart.html', {'product' : product})

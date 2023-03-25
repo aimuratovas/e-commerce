@@ -12,8 +12,8 @@ class Products(models.Model):
 
 
 class Shopping_cart(models.Model):
-     product_id = models.ForeignKey(Products, on_delete=models.SET_NULL, null=True) 
+     product = models.ForeignKey(Products, on_delete=models.SET_NULL, null=True) 
      quantity = models.IntegerField(default=1)
 
      def __str__(self) -> str:
-        return f"{self.product_id} {self.quantity}"
+        return f"{self.product} {self.quantity}"

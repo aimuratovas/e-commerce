@@ -1,0 +1,17 @@
+{% extends 'pages/index.html' %}
+
+{% block content %}
+    <h2> Shopping cart result </h2>
+    
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <p class="result">Successfully added {{product.name}}</p>        
+        </div>
+        <div class="card-body">
+            <a href="/shopping-cart/" class="card-link">Go to shopping cart</a>
+        </div>
+        <div class="card-body">
+            <a href="/" class="card-link">Go to main page</a>
+        </div>
+    </div>
+{% endblock content %}
