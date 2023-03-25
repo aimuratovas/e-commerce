@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from .models import *
-import json
 
 # Create your views here.
 def home(request):

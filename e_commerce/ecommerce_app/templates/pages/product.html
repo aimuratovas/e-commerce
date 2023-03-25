@@ -1,4 +1,4 @@
-{% extends 'pages/index.html' %}
+{% extends 'pages/layout.html' %}
 
 {% block content %}
 <h2> Product info </h2>
@@ -7,7 +7,7 @@
         <img src="{{product.img}}" height = "400px" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Product Name: {{product.name}}</h5>
-            <p class="price">Product Cost: {{product.cost}}</p>
+            <p class="price">Product Cost: ${{product.cost}}</p>
         </div>
         <div class="card-body">
             <a href="/shopping-cart/{{product.id}}" class="card-link">Add to cart</a>
