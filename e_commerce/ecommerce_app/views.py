@@ -35,18 +35,15 @@ def product_info(request, name):
     }
     return render(request, 'pages/product.html', data)
     
-def search_by_name(request, name):
-    # TODO
-    render(request, 'pages/search_input.html')
-    name = request.GET.get('name')
+def search_by_name(request):
+    name = request.GET.get("product_name")
 
-    product = Products.objects.all().filter(name = name)
+    product = Products.objects.filter(name = name)
 
     if not product:
         return render(request, 'pages/search_no_result.html')
     else:
         return product_info(request, name)
-
 
 def shopping_cart(request):
     shoppings = Shopping_cart.objects.all()
