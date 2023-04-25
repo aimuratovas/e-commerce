@@ -1,17 +1,24 @@
-{% extends 'pages/layout.html' %}
-
-{% block content %}
-<h2> Product info </h2>
+{% extends 'pages/layout.html' %} {% block content %}
+<h2 style="display: flex; justify-content: center">Product info</h2>
 <div class="card-group">
-    <div class="card">
-        <img src="{{product.img}}" height = "400px" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Product Name: {{product.name}}</h5>
-            <p class="price">Product Cost: ${{product.cost}}</p>
-        </div>
-        <div class="card-body">
-            <a href="/shopping-cart/{{product.id}}" class="card-link">Add to cart</a>
-        </div>
+  <div class="card">
+    <img src="{{product.img}}" height="600px" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title" style="display: flex; justify-content: center">
+        Product Name: {{product.name}}
+      </h5>
+      <p class="price" style="display: flex; justify-content: center">
+        Product Cost: ${{product.cost}}
+      </p>
     </div>
+    <div class="card-body">
+      <a
+        href="/shopping-cart/{{product.id}}"
+        class="card-link"
+        style="display: flex; justify-content: center"
+        >Add to cart</a
+      >
+    </div>
+  </div>
 </div>
 {% endblock content %}

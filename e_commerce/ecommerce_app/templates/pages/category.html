@@ -1,15 +1,91 @@
-{% extends 'pages/layout.html' %}
+{% extends 'pages/layout.html' %} {% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/" style="margin-left: 5%">Fabric</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-{% block content %}
-    <h2> Category </h2>
+  <div
+    style="display: flex; justify-content: space-between"
+    class="collapse navbar-collapse"
+    id="navbarSupportedContent"
+  >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/category/">All categories </a>
+      </li>
+    </ul>
+    <form
+      action="/search"
+      method="get"
+      style="display: flex"
+      class="form-inline my-2 my-lg-0"
+    >
+      <input
+        name="product_name"
+        class="form-control mr-sm-2"
+        type="text"
+        placeholder="Product name"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Search
+      </button>
+    </form>
+  </div>
+</nav>
 
-{% for category in  categories%}
-    
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-        <div><a href = '/category/{{category}}'> {{category}} </a></div>            
-        </div>
-    </div>
+<h2 style="display: flex; justify-content: center">All Categories</h2>
 
-{% endfor %}
-{% endblock content %}
+<div class="card bg-dark text-white">
+  <img
+    class="card-img"
+    src="https://images.squarespace-cdn.com/content/v1/58541f442e69cf656281e641/1550805665229-1Y23YGCNM2P358ZIIU5K/Pugliese13.jpg?format=1500w"
+    height="700px"
+    alt="Card image"
+  />
+  <div class="card-img-overlay">
+    <h5 class="card-title">Home</h5>
+    <a href="/category/Home" class="card-link">See Home products</a>
+  </div>
+</div>
+
+<div class="card bg-dark text-white">
+  <img
+    class="card-img"
+    src="https://hips.hearstapps.com/hmg-prod/images/ghk010123homeminifeature-005-6414864bc1ef0.png?crop=1.00xw:0.392xh;0,0.306xh&resize=1200:*"
+    height="700px"
+    alt="Card image"
+  />
+  <div class="card-img-overlay">
+    <h5 class="card-title">Kitchen</h5>
+    <a href="/category/Kitchen" class="card-link">See Kitchen products</a>
+  </div>
+</div>
+
+<div class="card bg-dark text-white">
+  <img
+    class="card-img"
+    src="https://static.dezeen.com/uploads/2020/10/shen-beauty-brooklyn-shop-interiors-plywood-mythology-new-york_dezeen_2364_col_5.jpg"
+    height="700px"
+    alt="Card image"
+  />
+  <div class="card-img-overlay">
+    <h5 class="card-title">Beauty</h5>
+    <a href="/category/Beauty" class="card-link">See Beauty products</a>
+  </div>
+</div>
+
+{% comment %} {% for category in categories%}
+<div style="display: flex, flex-direction:row, justify-content:space-between">
+  <h3>{{category}}</h3>
+</div>
+{% endfor %} {% endcomment %} {% endblock content %}

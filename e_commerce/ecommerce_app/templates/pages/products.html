@@ -1,15 +1,243 @@
-{% extends 'pages/layout.html' %}
+{% extends 'pages/layout.html' %} {% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/" style="margin-left: 5%">Fabric</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-{% block content %}
-    <h2> All products in given category </h2>
+  <div
+    style="display: flex; justify-content: space-between"
+    class="collapse navbar-collapse"
+    id="navbarSupportedContent"
+  >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/category/">All categories </a>
+      </li>
+    </ul>
+    <form
+      action="/search"
+      method="get"
+      style="display: flex"
+      class="form-inline my-2 my-lg-0"
+    >
+      <input
+        name="product_name"
+        class="form-control mr-sm-2"
+        type="text"
+        placeholder="Product name"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Search
+      </button>
+    </form>
+  </div>
+</nav>
 
-{% for product in  products%}
-    
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-        <div><a href = '/product/{{product.name}}'> {{product.name}} </a></div>            
-        </div>
+<div>
+  <h2 style="display: flex; justify-content: center">
+    All products in Home category
+  </h2>
+
+  <div class="card-group">
+    <div class="card">
+      <img
+        class="card-img-top"
+        src="https://secure.img1-fg.wfcdn.com/im/17359704/c_crop_resize_zoom-h624-w900%5Ecompr-r85/1391/139101563/default_name.jpg"
+        height="350px"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title" style="display: flex; justify-content: center">
+          Mirror
+        </h5>
+      </div>
+      <a
+        href="/product/Mirror"
+        class="card-link"
+        style="display: flex; justify-content: center"
+        >For Product details</a
+      >
     </div>
+    <div class="card">
+      <img
+        class="card-img-top"
+        src="https://www.thespruce.com/thmb/bdUgKy6cenWSxFy3EQ87nHJtLss=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/where-to-put-your-television-1976760-hero-307b3a5acab344f3aaf40fe711874f53.jpg"
+        height="350px"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title" style="display: flex; justify-content: center">
+          TV set
+        </h5>
+      </div>
+      <a
+        href="/product/TV%20set"
+        class="card-link"
+        style="display: flex; justify-content: center"
+        >For Product details</a
+      >
+    </div>
+    <div class="card">
+      <img
+        class="card-img-top"
+        src="https://www.longislanddiscountfurniture.com/uploads/imagegallery/images/Landing_Banner_1.jpg"
+        height="350px"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title" style="display: flex; justify-content: center">
+          Sofa
+        </h5>
+      </div>
+      <a
+        href="/product/Sofa"
+        class="card-link"
+        style="display: flex; justify-content: center"
+        >For Product details</a
+      >
+    </div>
+  </div>
+</div>
 
-{% endfor %}
+<div>
+  <h2 style="display: flex; justify-content: center">
+    All products in Kitchen category
+  </h2>
+
+  <div class="card-group">
+    <div class="card">
+      <img
+        class="card-img-top"
+        src="https://assets.bonappetit.com/photos/61e755ce6b6fe523b0365397/16:9/w_1920,h_1080,c_limit/20220112%20Best%20Coffee%20Maker%20LEDE.jpg"
+        height="300px"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title" style="display: flex; justify-content: center">
+          Coffee Machine
+        </h5>
+      </div>
+      <a
+        href="/product/Coffee%20machine"
+        class="card-link"
+        style="display: flex; justify-content: center"
+        >For Product details</a
+      >
+    </div>
+    <div class="card">
+      <img
+        class="card-img-top"
+        src="https://www.berings.com/wp-content/uploads/2022/07/Champagne-Toaster-6.jpg"
+        height="300px"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title" style="display: flex; justify-content: center">
+          Toaster
+        </h5>
+      </div>
+      <a
+        href="/product/Toaster"
+        class="card-link"
+        style="display: flex; justify-content: center"
+        >For Product details</a
+      >
+    </div>
+    <div class="card">
+      <img
+        class="card-img-top"
+        src="https://images.costco-static.com/ImageDelivery/imageService?profileId=12026540&itemId=100761217-847&recipeName=680"
+        height="300px"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title" style="display: flex; justify-content: center">
+          Dinnerware
+        </h5>
+      </div>
+      <a
+        href="/product/Dinnerware"
+        class="card-link"
+        style="display: flex; justify-content: center"
+        >For Product details</a
+      >
+    </div>
+  </div>
+</div>
+
+<div>
+  <h2 style="display: flex; justify-content: center">
+    All products in Beauty category
+  </h2>
+
+  <div class="card-group">
+    <div class="card">
+      <img
+        class="card-img-top"
+        src="http://cdn.shopify.com/s/files/1/1406/2336/products/BC-Ecomm-Styled-Irresitable-Palette-10_1024x1024.jpg?v=1642098078"
+        height="300px"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title" style="display: flex; justify-content: center">
+          Palette
+        </h5>
+      </div>
+      <a
+        href="/product/Palette"
+        class="card-link"
+        style="display: flex; justify-content: center"
+        >For Product details</a
+      >
+    </div>
+    <div class="card">
+      <img
+        class="card-img-top"
+        src="https://www.instyle.com/thmb/0klO_Xj4ZMVXsCyIL0wfZlodb5g=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ins-primary-best-lip-balms-jjuliao-10122022-11221-549be76648dd4cf1ad1822b6ba153cb2.jpg"
+        height="300px"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title" style="display: flex; justify-content: center">
+          Lip balm
+        </h5>
+      </div>
+      <a
+        href="/product/Lip%20balm"
+        class="card-link"
+        style="display: flex; justify-content: center"
+        >For Product details</a
+      >
+    </div>
+    <div class="card">
+      <img
+        class="card-img-top"
+        src="https://www.countryhillcottage.com/wp-content/uploads/2019/06/Country_Hill_Cottage_DIY_Hand_Cream_Recipe_with_Essential_Oils-07.jpg"
+        height="300px"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title" style="display: flex; justify-content: center">
+          Hand balm
+        </h5>
+      </div>
+      <a
+        href="/product/Hand%20balm"
+        class="card-link"
+        style="display: flex; justify-content: center"
+        >For Product details</a
+      >
+    </div>
+  </div>
+</div>
 {% endblock content %}

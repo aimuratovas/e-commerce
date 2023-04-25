@@ -1,16 +1,66 @@
-{% extends 'pages/layout.html' %}
+{% extends 'pages/layout.html' %} {% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/" style="margin-left: 5%">Fabric</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-{% block content %}
-    <h2> Shopping cart </h2>
+  <div
+    style="display: flex; justify-content: space-between"
+    class="collapse navbar-collapse"
+    id="navbarSupportedContent"
+  >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/category/">All categories </a>
+      </li>
+      <li style="display: flex" class="nav-item">
+        <a class="nav-link" href="#">Trending now</a>
+      </li>
+    </ul>
+    <form
+      action="/search"
+      method="get"
+      style="display: flex"
+      class="form-inline my-2 my-lg-0"
+    >
+      <input
+        name="product_name"
+        class="form-control mr-sm-2"
+        type="text"
+        placeholder="Product name"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Search
+      </button>
+    </form>
+  </div>
+</nav>
 
-{% for shopping in  shoppings %}
-    
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <p class="price">{{shopping.product.name}}: {{shopping.quantity}} - ${{shopping.product.cost}}</p>        
-        </div>
-    </div>
+<h2 style="display: flex; justify-content: center">Your shopping cart</h2>
+
+{% for shopping in shoppings %}
+
+<div class="card" style="display: flex; justify-content: center">
+  <div class="card-body" style="display: flex; justify-content: center">
+    <p class="price">
+      {{shopping.product.name}}: {{shopping.quantity}} -
+      ${{shopping.product.cost}}
+    </p>
+  </div>
+</div>
 
 {% endfor %}
-<p class="total_price">TOTAL PRICE: ${{total}}</p>
+<p class="total_price" style="display: flex; justify-content: center">
+  TOTAL: ${{total}}
+</p>
 {% endblock content %}
