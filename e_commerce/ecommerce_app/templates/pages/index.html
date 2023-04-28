@@ -3,28 +3,6 @@
 
 {% block content %}
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/" style="margin-left:5%">Fabric</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div style="display: flex; justify-content: space-between" class="collapse navbar-collapse"
-       id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/category/">All categories</a>
-      </li>
-    </ul>
-    <form action="search/" method="get" style="display: flex" class="form-inline my-2 my-lg-0">
-      <input name="product_name" class="form-control mr-sm-2" type="text" placeholder="Product name"
-             aria-label="Search"/>
-      <button class="btn btn-outline-success my-2 my-sm-0" style="border-color:white" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-
 <body>
   <div style="margin-left:90%">
     <img src="https://www.vhv.rs/dpng/d/72-720639_cart-icon-in-png-transparent-png.png" width="30px" height="30px"> <span>
@@ -44,7 +22,7 @@
       <img class="card-img-top" src="{{ product.img }}" width="270px" height="275px" alt="{{ product.name }}">
       <div class="card-body">
         <h5 class="card-title" style="display: flex; justify-content: center">{{ product.name }}</h5>
-        <a href="{{ product.url }}" class="card-link"  style="display: flex; justify-content: center">For more information</a>
+        <a href="/product/{{ product.name }}" class="card-link"  style="display: flex; justify-content: center">For more information</a>
       </div>
     </div>
     {% endfor %}

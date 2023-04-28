@@ -13,20 +13,26 @@ def home(request):
 
 
 def all_categories(request):
-    categories = []
+    categories = set()
     products = Products.objects.all()
+    products_ls = []
     for product in products:
-        categories.append(product.category)
+        if product.category not in categories:
+            categories.add(product.category)
+            products_ls.append(product)
 
     data = {
-        'categories': set(categories),
+        'categories': categories,
+        'products': products_ls,
     }
     return render(request, 'pages/category.html', data)
+
 
 
 def products_by_category(request, category):
     products = Products.objects.all().filter(category=category)
     data = {
+        'category': category,
         'products': products,
     }
     return render(request, 'pages/products.html', data)

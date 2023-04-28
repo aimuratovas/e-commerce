@@ -1,14 +1,12 @@
-{% extends 'pages/layout.html' %}
+{% extends 'pages/layout.html' %} {% block content %}
+<h2>Shopping cart result</h2>
 
-{% block content %}
-    <h2> Shopping cart result </h2>
-    
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <p class="result">Successfully added {{product.name}}</p>        
-        </div>
-    </div>
-    <div class="card-body">
-        <a href="/shopping-cart/" class="card-link">Go to shopping cart</a>
-    </div>
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    <p class="result">Successfully added {{product.name}}</p>
+  </div>
+</div>
+<div class="card-body">
+  <a href="/shopping-cart/" class="card-link">Go to shopping cart</a>
+</div>
 {% endblock content %}
