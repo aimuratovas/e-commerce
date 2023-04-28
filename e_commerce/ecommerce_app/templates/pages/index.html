@@ -1,87 +1,53 @@
-{% extends 'pages/layout.html' %} {% load static %} {% block content %}
+{% extends 'pages/layout.html' %}
+{% load static %}
+
+{% block content %}
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="/" style="margin-left:5%">Fabric</a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div
-    style="display: flex; justify-content: space-between"
-    class="collapse navbar-collapse"
-    id="navbarSupportedContent"
-  >
+  <div style="display: flex; justify-content: space-between" class="collapse navbar-collapse"
+       id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/category/">All categories </a>
+        <a class="nav-link" href="/category/">All categories</a>
       </li>
     </ul>
-    <form
-
-      action="search/"
-      method="get"
-      style="display: flex"
-      class="form-inline my-2 my-lg-0"
-    >
-      <input
-        name="product_name"
-        class="form-control mr-sm-2"
-        type="text"
-        placeholder="Product name"
-        aria-label="Search"
-      />
-      <button class="btn btn-outline-success my-2 my-sm-0" style="border-color:white" type="submit">
-        Search
-      </button>
+    <form action="search/" method="get" style="display: flex" class="form-inline my-2 my-lg-0">
+      <input name="product_name" class="form-control mr-sm-2" type="text" placeholder="Product name"
+             aria-label="Search"/>
+      <button class="btn btn-outline-success my-2 my-sm-0" style="border-color:white" type="submit">Search</button>
     </form>
   </div>
 </nav>
 
 <body>
   <div style="margin-left:90%">
-  <img src="https://www.vhv.rs/dpng/d/72-720639_cart-icon-in-png-transparent-png.png" width="30px" height="30px"> <span> <a href="/shopping-cart/"> Shopping cart</a> </span>
+    <img src="https://www.vhv.rs/dpng/d/72-720639_cart-icon-in-png-transparent-png.png" width="30px" height="30px"> <span>
+      <a href="/shopping-cart/"> Shopping cart</a>
+    </span>
   </div>
+
   <div>
-    <img src="https://lever-client-logos.s3.us-west-2.amazonaws.com/877964ff-3655-4e30-b1ff-5e51b2571e4b-1660752783296.png" class="image1" width="1500px" height="350px">
+    <img src="https://lever-client-logos.s3.us-west-2.amazonaws.com/877964ff-3655-4e30-b1ff-5e51b2571e4b-1660752783296.png"
+         class="image1" width="1500px" height="350px">
     <h3 style="display: flex; justify-content: center">Trending<h3>
   </div>
 
   <div class="card-group">
+    {% for product in products %}
     <div class="card">
-      <img class="card-img-top" src="https://assets.bonappetit.com/photos/61e755ce6b6fe523b0365397/16:9/w_1920,h_1080,c_limit/20220112%20Best%20Coffee%20Maker%20LEDE.jpg" width="286px" height="275px" alt="Card image cap">
+      <img class="card-img-top" src="{{ product.img }}" width="270px" height="275px" alt="{{ product.name }}">
       <div class="card-body">
-        <h5 class="card-title" style="display: flex; justify-content: center">Coffee machine</h5>
-        <p class="card-text" style="text-align: justify">The JURA Z10 in Aluminum White revolutionizes fully automatic espresso brewing. Enjoy a full of drink options, from hot to cold. Our Premium Espresso Machine offers super easy operation with intuitive controls. </p>
-        <a href="http://127.0.0.1:8000/product/Coffee%20machine" class="card-link"  style="display: flex; justify-content: center">For more information</a>
+        <h5 class="card-title" style="display: flex; justify-content: center">{{ product.name }}</h5>
+        <a href="{{ product.url }}" class="card-link"  style="display: flex; justify-content: center">For more information</a>
       </div>
     </div>
-    <div class="card">
-      <img class="card-img-top" src="https://www.berings.com/wp-content/uploads/2022/07/Champagne-Toaster-6.jpg" width="286px" height="275px" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title" style="display: flex; justify-content: center">Toaster</h5>
-        <p class="card-text" style="text-align: justify">
-          Smeg 50's retro style appliances will add a pop to any kitchen! With a powder coated steel body, polished chrome base, stainless steel ball lever knob and backlit chrome knob, Smeg toasters are made to last and will never go out of style.</p>
-        <a href="http://127.0.0.1:8000/product/Toaster" class="card-link"  style="display: flex; justify-content: center">For more information</a>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="https://images.costco-static.com/ImageDelivery/imageService?profileId=12026540&itemId=100761217-847&recipeName=680" width="286px" height="275px" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title" style="display: flex; justify-content: center">Dinnerware</h5>
-        <p class="card-text" style="text-align: justify">This Pfaltzgraff Maddox 12-Piece Dinnerware Set is great for everyday use. Made of stoneware. Beautifully detailed design complements any decor and can be used for both formal and casual occasions. Dishwasher and microwave safe.</p>
-        <a href="http://127.0.0.1:8000/product/Dinnerware" class="card-link"  style="display: flex; justify-content: center">For more information</a>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 
-
-</body>
-
-{%endblock content %}
+{% endblock %}
