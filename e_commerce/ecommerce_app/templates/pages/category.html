@@ -4,19 +4,17 @@
 
 {% for category in categories %}
 <div class="card bg-dark text-white">
-  {% for product in products%} {% if product.category == category %}
   <img
     class="card-img"
-    src="{{ product.img }}"
+    src="{{ category.img }}"
     height="700px"
     alt="Card image"
   />
   <div class="card-img-overlay">
-    <h5 class="card-title">{{ category }}</h5>
-    <a href="/category/{{ category }}" class="card-link"
-      >See {{ category }} products</a
+    <h5 class="card-title">{{ category.name }}</h5>
+    <a href="/category/{{ category.id }}" class="card-link"
+      >See {{ category.name }} products</a
     >
   </div>
-  {% endif %} {% endfor %}
 </div>
 {% endfor %} {% endblock content %}

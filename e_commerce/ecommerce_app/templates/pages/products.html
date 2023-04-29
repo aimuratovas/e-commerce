@@ -1,7 +1,7 @@
 {% extends 'pages/layout.html' %} {% block content %}
 <div>
   <h2 style="display: flex; justify-content: center">
-    All products in {{ category }} category
+    All products in {{ category.name }} category
   </h2>
   <div class="card-group">
     {% for product in products %}
