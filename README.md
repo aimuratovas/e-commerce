@@ -1,4 +1,4 @@
-- **E-commerce Application**
+## E-commerce Application
 
 It allows the user to search for and browse products, and add products to their shopping cart.
 
